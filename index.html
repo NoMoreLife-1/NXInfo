@@ -22,6 +22,9 @@
             --text: #e0e0e0;
             --accent1: #b0b0b0;
             --accent2: #ffffff;
+            --red: #e53935;
+            --red-soft: #ff6b6b;
+            --red-glow: rgba(229, 57, 53, 0.25);
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255,255,255,0.06);
         }
@@ -77,9 +80,9 @@
             max-width: 900px;
             width: 90%;
             box-shadow: 0 25px 50px rgba(0,0,0,0.7), 
-                        0 0 40px rgba(255,255,255,0.03);
+                        0 0 40px rgba(229,57,53,0.06);
             transform: translateZ(100px) rotateX(5deg);
-            border: 2px solid var(--border);
+            border: 1px solid rgba(229,57,53,0.12);
             animation: float 4s ease-in-out infinite;
         }
 
@@ -119,18 +122,18 @@
 
         .social-link:hover {
             transform: scale(1.15) rotate(360deg);
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(255,255,255,0.15);
+            color: var(--red-soft);
+            box-shadow: 0 0 25px var(--red-glow), 0 0 50px rgba(229,57,53,0.1);
         }
 
         .clock {
             font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
             margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.15), 
-                         0 0 25px rgba(255,255,255,0.08);
+            text-shadow: 0 0 15px rgba(229,57,53,0.2), 
+                         0 0 25px rgba(229,57,53,0.1);
             letter-spacing: 3px;
-            background: linear-gradient(to right, var(--accent1), var(--accent2));
+            background: linear-gradient(to right, var(--red-soft), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -171,8 +174,8 @@
 
         .control-btn:hover {
             transform: translateY(-2px);
-            color: #ffffff;
-            box-shadow: 0 15px 30px rgba(255,255,255,0.08);
+            color: var(--red-soft);
+            box-shadow: 0 15px 30px var(--red-glow);
         }
         .control-btn:focus-visible {
             outline: 2px solid var(--accent2);
@@ -192,7 +195,7 @@
             z-index: 10600;
         }
         .audio-fab.active {
-            box-shadow: 0 0 0 10px rgba(255,255,255,0.05), 0 0 20px rgba(255,255,255,0.1);
+            box-shadow: 0 0 0 10px rgba(229,57,53,0.08), 0 0 20px rgba(229,57,53,0.15);
         }
 
         .feedback-btn {
@@ -210,9 +213,10 @@
         }
 
         .feedback-btn:hover {
-            background-color: var(--accent2);
+            background-color: var(--red);
+            color: #ffffff;
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255,255,255,0.1);
+            box-shadow: 0 15px 30px var(--red-glow);
         }
 
         @media (max-width: 768px) {
@@ -303,8 +307,8 @@
             transition: opacity 0.4s ease;
         }
         .kissMyAss .button-start:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.05);
+            border-color: rgba(229, 57, 53, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--red-glow);
             transform: translateY(-3px);
             letter-spacing: 6px;
         }
@@ -336,7 +340,7 @@
         .enter-wrapper .hint {
             font-size: 0.75rem;
             opacity: 0.4;
-            color: #ffffff;
+            color: var(--red-soft);
             letter-spacing: 2px;
             text-transform: uppercase;
             animation: hintPulse 3s ease-in-out infinite;
@@ -357,7 +361,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2.2rem;
             letter-spacing: 4px;
-            background: linear-gradient(to right, var(--accent1), var(--accent2));
+            background: linear-gradient(to right, var(--red), var(--red-soft));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             opacity: 0;
@@ -375,7 +379,7 @@
             opacity: 0;
             transform: translateY(12px) scale(0.98);
             filter: blur(6px);
-            background: linear-gradient(to right, #888888, #ffffff);
+            background: linear-gradient(to right, var(--red-soft), #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -422,12 +426,12 @@
             width: 24px;
             height: 24px;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            filter: drop-shadow(0 0 5px rgba(229,57,53,0.3));
         }
 
         #visitorCount:hover svg {
             transform: scale(1.2) rotate(15deg);
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+            filter: drop-shadow(0 0 8px rgba(229,57,53,0.5));
         }
 
         #visitorCount svg path {
@@ -437,7 +441,7 @@
         #visitorCount .count {
             font-weight: 700;
             letter-spacing: 1px;
-            background: linear-gradient(to right, #cccccc, #ffffff);
+            background: linear-gradient(to right, var(--red-soft), #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -451,7 +455,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background: linear-gradient(to right, #666666, #ffffff);
+            background: linear-gradient(to right, var(--red), var(--red-soft));
             transition: width 0.3s ease;
         }
 
@@ -473,7 +477,7 @@
             width: 100%;
             height: 100%;
             border-radius: 20px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            background: radial-gradient(circle, rgba(229,57,53,0.1) 0%, rgba(229,57,53,0) 70%);
             animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
             opacity: 0;
             pointer-events: none;
